@@ -1,0 +1,10 @@
+pandas>=2.0
+numpy
+matplotlib
+seaborn
+duckdb
+scipy
+# only needed to run the notebook
+jupyter
+ipykernel
+nbformat
