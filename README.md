@@ -2,14 +2,22 @@
 
 ## Scope
 
-- RavenStack synthetic SaaS data
-- Starting with account churn
-- SQL / checks first, charts later
+- Synthetic B2B SaaS retention analysis
+- 500 accounts, subscriptions, usage, support and churn tables
+- Working account churn as the headline number
 
-## First Pass
+## Early Findings
 
-- 110 / 500 accounts churned (22%)
-- DevTools looks worse than the other industries
-- Subscription churn is a different metric, need to keep that seperate
+- Account churn: 22.0% (110 / 500)
+- DevTools: 31.0%
+- Event source: 30.2%; partner: 14.6%
+- 6–20 seats: 25.0%
+- Plan tier is mostly flat
+
+## Open Questions
+
+- Are churn events actually usable for rate calculations? probably not
+- Does usage separate churned customers from retained ones?
+- Revenue impact by plan still to do
 
 Dataset: River @ Rivalytics on Kaggle.
