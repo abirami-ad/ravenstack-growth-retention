@@ -6,7 +6,7 @@
 python analysis/run.py analysis/05_churn_segmentation.sql
 ```
 
-## Churn
+## Metric Rules
 
 | Metric | Result |
 |---|---:|
@@ -14,11 +14,18 @@ python analysis/run.py analysis/05_churn_segmentation.sql
 | Subscription churn | 486 / 5,000 = 9.7% |
 | Churn events | 600 |
 
-Using account churn by default. Event rows are for reasons, not the main rate.
+## Guardrails
 
-## Queries
+- Account churn is the default
+- Event rows are for reason-code analysis
+- Use `signup_date <= usage_date <= churn_date` for churned accounts
+- Small intersections are directional only
+
+## Files
 
 - `01_data_validation.sql`
 - `02_product_metrics.sql`
 - `03_growth_activation.sql`
+- `04_retention_cohorts.sql`
 - `05_churn_segmentation.sql`
+- `06_feature_analysis.sql`

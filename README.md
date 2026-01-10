@@ -3,21 +3,27 @@
 ## Scope
 
 - Synthetic B2B SaaS retention analysis
-- 500 accounts, subscriptions, usage, support and churn tables
-- Working account churn as the headline number
+- 500 accounts across subscriptions, usage, support and churn data
+- Account churn is the headline metric: 22.0%
 
-## Early Findings
+## Findings So Far
 
-- Account churn: 22.0% (110 / 500)
-- DevTools: 31.0%
+- DevTools: 31.0% churn
 - Event source: 30.2%; partner: 14.6%
 - 6–20 seats: 25.0%
 - Plan tier is mostly flat
+- Usage volume doesn't look very different for churned accounts
 
-## Open Questions
+## Important Data Fix
 
-- Are churn events actually usable for rate calculations? probably not
-- Does usage separate churned customers from retained ones?
-- Revenue impact by plan still to do
+- 53% of raw usage rows predate account signup
+- Early activation / active-account queries now use `signup_date <= usage_date`
+- Churned account usage also stops at the last churn date
+
+## Next
+
+- Cohorts
+- Revenue exposure
+- Feature / support checks
 
 Dataset: River @ Rivalytics on Kaggle.
