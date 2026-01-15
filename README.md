@@ -1,29 +1,27 @@
 # RavenStack — Growth & Retention Analysis
 
-## Scope
+## Overview
 
 - Synthetic B2B SaaS retention analysis
-- 500 accounts across subscriptions, usage, support and churn data
-- Account churn is the headline metric: 22.0%
+- 500 accounts, 5k subscriptions, 25k usage events, 2k tickets
+- Account churn: 22.0%
 
-## Findings So Far
+## Findings
 
-- DevTools: 31.0% churn
-- Event source: 30.2%; partner: 14.6%
-- 6–20 seats: 25.0%
-- Plan tier is mostly flat
-- Usage volume doesn't look very different for churned accounts
+- DevTools 31.0%; event 30.2% vs partner 14.6%; 6–20 seats 25.0%
+- Usage and most support metrics are weak churn signals
+- Feature reasons lead churn events (19.0%), but feedback text is generic
+- Need to finish ARR impact and product recommendation
 
-## Important Data Fix
+## Work So Far
 
-- 53% of raw usage rows predate account signup
-- Early activation / active-account queries now use `signup_date <= usage_date`
-- Churned account usage also stops at the last churn date
+- SQL in `analysis/`
+- Notebook + chart exports in `notebooks/` and `images/`
+- `notes.md` is rough working notes
 
-## Next
+## Data Notes
 
-- Cohorts
-- Revenue exposure
-- Feature / support checks
+- Account churn, subscription churn and churn events are different metrics
+- Usage is bounded to signup → churn because the raw event dates are messy
 
-Dataset: River @ Rivalytics on Kaggle.
+Dataset credit: River @ Rivalytics on Kaggle.
